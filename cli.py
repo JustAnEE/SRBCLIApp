@@ -58,7 +58,7 @@ class CLI:
                     RecognizedCommand = True 
 
                 if ("updategain" in Commands):
-                    Gain = int(Commands.split()[1])
+                    Gain = float(Commands.split()[1])
                     self.__MyDSP.UpdateGain(Gain)
                     RecognizedCommand = True 
 

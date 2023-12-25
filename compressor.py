@@ -21,5 +21,7 @@ class Compressor:
    def ExportWAVToMP3(self)->None:
       
       TempFile = pydub.AudioSegment.from_wav(self.__MyFileLocation)
-      TempFile.export(self.__MyOutputLocation)
+      #Temp = TempFile.compress_dynamic_range(threshold=-12.0, ratio=30.0, attack=10.0, release=200.0)
+      TempFile.normalize() 
+      TempFile.export(self.__MyOutputLocation, bitrate='192k', format='mp3')
       return 

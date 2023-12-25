@@ -29,8 +29,8 @@ class BassBooster:
       self.__MyChannelLength = 0 
       self.__MyLocation = "" 
       self.__MyWavFileLocation = ""
-      self.__MyThroughLineScale = 0.7
-      self.__MyReverbScale = 0.3 
+      self.__MyThroughLineScale = 0.85
+      self.__MyReverbScale = 0.15
       # Objects 
       self.__MyCompressor = Compressor()
       return 
@@ -148,17 +148,18 @@ class BassBooster:
  
    def SlowReverbAndBoost(self)->None:
       
-      # Create a through line copy of the original audio 
-      OriginalAudio = self.__MyData
+      # Apply the shelving filter 
+      self.__ApplyLowShelf()
+     
+      # Deep copy original audio through line 
+      OriginalAudio = np.array(self.__MyData)
 
       # Apply the impulse response for the reverberation 
       self.__ApplyReverb()
 
-      # Apply the shelving filter 
-      self.__ApplyLowShelf()
 
       # Apply the processed data to the original audio to keep 
-      # some of the original sound 
+      # some of the original sound
       self.__MyData = self.__MyReverbScale*self.__MyData + self.__MyThroughLineScale*OriginalAudio
       
       # Write the audio slowed 
