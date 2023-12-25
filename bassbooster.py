@@ -11,7 +11,7 @@ from compressor import Compressor
 # warning 
 warnings.filterwarnings("ignore", lineno=46)
 warnings.filterwarnings("ignore", lineno=51)
-warnings.filterwarnings("ignore", lineno=175)
+warnings.filterwarnings("ignore", lineno=176)
 class BassBooster:
 
    def __init__(self):
