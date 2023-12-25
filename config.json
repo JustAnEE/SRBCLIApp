@@ -1,0 +1,8 @@
+
+{
+   "WavFileLoc" : "D:\\GeneralDocuments\\wavfiles\\answeringmachine.wav",
+   "CustomImpulseResponseLoc" : "D:\\GeneralDocuments\\wavfiles\\impulsefloat.wav",
+   "Gain" : 1,
+   "LowShelfCutoffHz" : 120,
+   "PercentSlowed" : 10
+}
